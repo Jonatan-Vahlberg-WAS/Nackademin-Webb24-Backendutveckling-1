@@ -1,5 +1,6 @@
 const path = require("path")
 const express = require("express");
+
 const app = express();
 const port = 3000;
 
@@ -11,7 +12,10 @@ app.get("/info", (req, res) => {
 
 app.get("/", (req, res) => {
     const _path = path.join(__dirname, 'views/gallery.html')
-    res.sendFile(_path)
+    res.sendFile(_path, (err) => {
+        console.warn("Error fetching gallery", err)
+        res.sendFile(path.join(__dirname, 'views/404.html'))
+    })
 });
 
 app.get("/blog", (req, res) => {
