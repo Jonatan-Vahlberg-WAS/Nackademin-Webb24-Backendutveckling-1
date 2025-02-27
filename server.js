@@ -10,6 +10,9 @@ const PORT = process.env.PORT || 3000;
 // Initiera Express applikationen
 const app = Express();
 
+// -- Middlewares --
+app.use(Express.static('public'))
+
 // --- Route Hanterare ---
 
 // Grundläggande route som svarar på GET-förfrågan till rotsökvägen '/'
