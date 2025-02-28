@@ -39,7 +39,14 @@ async function removeCSV(fileName, id) {
   console.log("Row removed successfully");
 }
 
-// Huvudfunktion som hanterar programflödet
+/**
+ * Huvudfunktionen som hanterar programflödet
+ * Stödjer följande kommandon:
+ * --file=<filnamn> : Anger vilken fil som ska användas
+ * --action=<print|append|remove> : Anger vilken operation som ska utföras
+ * --data=<JSON-sträng> : Data som ska läggas till (krävs för append)
+ * --id=<användar-id> : ID på användaren som ska tas bort (krävs för remove)
+ */
 async function main() {
   // Parsa kommandoradsargument
   const fileName =
