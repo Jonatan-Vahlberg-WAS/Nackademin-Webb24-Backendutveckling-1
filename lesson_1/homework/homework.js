@@ -56,19 +56,19 @@ function validateInput(filename, key) {
 // Funktion för att hämta data från den mockade databasen
 function getData(filename, key) {
   // Kontrollera om filen finns i databasen
-  if (!mockData[filename]) {
+  const file = mockData[filename]
+  if (!file) {
     console.log("Filen finns inte.");
     return;
   }
-
   // Kontrollera om nyckeln finns i filen
-  if (!(key in mockData[filename])) {
+  if (!(key in file)) {
     console.log("Nyckeln saknas.");
     return;
   }
 
   // Hämta och visa värdet
-  const value = mockData[filename][key];
+  const value = file[key];
   console.log(`Värde: ${JSON.stringify(value)}`);
 }
 
