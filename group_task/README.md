@@ -38,8 +38,8 @@ node parse_csv.js --file=data/email.csv --action=json
 node parse_csv.js --file=data/email.csv --action=append --data="123;email@test.com;Jane;Doe"
 node parse_csv.js --file=data/email.csv --action=remove --id=123
 
-node parse_json.js --file=data/email.json --action=print
-node parse_json.js --file=data/email.json --action=append --data="{\"id\": 123, \"email\": \"email@test.com\", \"first_name\": \"Jane\", \"last_name\": \"Doe\"}"
-node parse_json.js --file=data/email.json --action=remove --id=123
+node parse_json.js --file=data/users.json --action=print
+node parse_json.js --file=data/users.json --action=append --data="{\"id\": 123, \"email\": \"email@test.com\", \"first_name\": \"Jane\", \"last_name\": \"Doe\"}"
+node parse_json.js --file=data/users.json --action=remove --id=123
 ```
 
