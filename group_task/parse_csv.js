@@ -31,8 +31,12 @@ async function removeCSV(fileName, id) {
   const data = await fs.readFile(fileName, "utf-8");
   const lines = data.split("\n");
   const index = lines.findIndex((line) => line.split(";")[0] === id);
+  if (index === -1) {
+    throw new Error("No row found with id:", id);
+  }
   lines.splice(index, 1);
   await fs.writeFile(fileName, lines.join("\n"));
+  console.log("Row removed successfully");
 }
 
 // Huvudfunktion som hanterar programflödet
