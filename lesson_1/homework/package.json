@@ -1,0 +1,15 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "Skriv ett Node.js-program som använder **`process.argv`** för att hantera användarinmatning och jobba med låtsasdata. Programmet ska göra följande:",
+  "main": "homework.js",
+  "scripts": {
+    "test": "npm run test:valid && npm run test:invalid",
+    "test:valid": "echo '\nTesting valid inputs...\n' && node homework.js students.txt count && node homework.js config.txt server",
+    "test:invalid": "echo '\nTesting invalid inputs...\n' && node homework.js wrong.json count && node homework.js students.txt nonexistentKey",
+    "start": "node homework.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
