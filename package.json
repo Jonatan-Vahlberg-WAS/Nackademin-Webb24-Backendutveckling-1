@@ -5,8 +5,12 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "node --watch index.js" 
+    "callback": "node callbacks.js",
+    "promise": "node promises.js",
+    "async": "node async.js",
+    "dev:callback": "node --watch callbacks.js",
+    "dev:promise": "node --watch promises.js",
+    "dev:async": "node --watch async.js"
   },
   "keywords": [],
   "author": "",
