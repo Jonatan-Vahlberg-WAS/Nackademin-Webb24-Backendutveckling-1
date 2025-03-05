@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Äpple",
+    "category": "fruit",
+    "price": 5.99
+  },
+  {
+    "id": 2,
+    "name": "Morot",
+    "category": "vegetable",
+    "price": 3.99
+  },
+  {
+    "id": 3,
+    "name": "Mjölk",
+    "category": "dairy",
+    "price": 15.99
+  },
+  {
+    "name": "Banan",
+    "category": "fruit",
+    "price": 7.99,
+    "id": 4
+  }
+]
