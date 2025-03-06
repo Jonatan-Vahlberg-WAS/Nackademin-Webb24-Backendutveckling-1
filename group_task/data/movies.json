@@ -1,0 +1,162 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "year": 1994,
+    "director": "Frank Darabont",
+    "genre": "Drama",
+    "rating": 9.3,
+    "description": "Two imprisoned men bond over a number of years, finding solace and eventual redemption through acts of common decency."
+  },
+  {
+    "title": "The Godfather",
+    "year": 1972,
+    "director": "Francis Ford Coppola",
+    "genre": "Crime",
+    "rating": 9.2,
+    "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son."
+  },
+  {
+    "title": "The Dark Knight",
+    "year": 2008,
+    "director": "Christopher Nolan",
+    "genre": "Action",
+    "rating": 9.0,
+    "description": "When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice."
+  },
+  {
+    "title": "Pulp Fiction",
+    "year": 1994,
+    "director": "Quentin Tarantino",
+    "genre": "Crime",
+    "rating": 8.9,
+    "description": "The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption."
+  },
+  {
+    "title": "Inception",
+    "year": 2010,
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi",
+    "rating": 8.8,
+    "description": "A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O."
+  },
+  {
+    "title": "The Matrix",
+    "year": 1999,
+    "director": "Lana Wachowski",
+    "genre": "Sci-Fi",
+    "rating": 8.7,
+    "description": "A computer programmer discovers that reality as he knows it is a simulation created by machines, and joins a rebellion to break free."
+  },
+  {
+    "title": "Forrest Gump",
+    "year": 1994,
+    "director": "Robert Zemeckis",
+    "genre": "Drama",
+    "rating": 8.8,
+    "description": "The presidencies of Kennedy and Johnson, the Vietnam War, the Watergate scandal and other historical events unfold from the perspective of an Alabama man with an IQ of 75."
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "year": 1991,
+    "director": "Jonathan Demme",
+    "genre": "Thriller",
+    "rating": 8.6,
+    "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer."
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": 2001,
+    "director": "Peter Jackson",
+    "genre": "Fantasy",
+    "rating": 8.8,
+    "description": "A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron."
+  },
+  {
+    "title": "Fight Club",
+    "year": 1999,
+    "director": "David Fincher",
+    "genre": "Drama",
+    "rating": 8.4,
+    "description": "An insomniac office worker and a devil-may-care soapmaker form an underground fight club that evolves into something much, much more."
+  },
+  {
+    "title": "The Lion King",
+    "year": 1994,
+    "director": "Roger Allers",
+    "genre": "Animation",
+    "rating": 8.5,
+    "description": "After the murder of his father, a young lion prince flees his kingdom only to learn the true meaning of responsibility and bravery."
+  },
+  {
+    "title": "Goodfellas",
+    "year": 1990,
+    "director": "Martin Scorsese",
+    "genre": "Crime",
+    "rating": 8.7,
+    "description": "The story of Henry Hill and his life in the mob, covering his relationship with his wife Karen Hill and his mob partners Jimmy Conway and Tommy DeVito."
+  },
+  {
+    "title": "The Avengers",
+    "year": 2012,
+    "director": "Joss Whedon",
+    "genre": "Action",
+    "rating": 8.0,
+    "description": "Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity."
+  },
+  {
+    "title": "The Grand Budapest Hotel",
+    "year": 2014,
+    "director": "Wes Anderson",
+    "genre": "Comedy",
+    "rating": 8.1,
+    "description": "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge."
+  },
+  {
+    "title": "Interstellar",
+    "year": 2014,
+    "director": "Christopher Nolan",
+    "genre": "Sci-Fi",
+    "rating": 8.6,
+    "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival."
+  },
+  {
+    "title": "The Departed",
+    "year": 2006,
+    "director": "Martin Scorsese",
+    "genre": "Crime",
+    "rating": 8.5,
+    "description": "An undercover cop and a mole in the police attempt to identify each other while infiltrating an Irish gang in South Boston."
+  },
+  {
+    "title": "The Social Network",
+    "year": 2010,
+    "director": "David Fincher",
+    "genre": "Drama",
+    "rating": 7.7,
+    "description": "As Harvard student Mark Zuckerberg creates the social networking site that would become known as Facebook, he is sued by the twins who claimed he stole their idea."
+  },
+  {
+    "title": "La La Land",
+    "year": 2016,
+    "director": "Damien Chazelle",
+    "genre": "Musical",
+    "rating": 8.0,
+    "description": "While navigating their careers in Los Angeles, a pianist and an actress fall in love while attempting to reconcile their aspirations for the future."
+  },
+  {
+    "title": "Get Out",
+    "year": 2017,
+    "director": "Jordan Peele",
+    "genre": "Horror",
+    "rating": 7.7,
+    "description": "A young African-American visits his white girlfriend's parents for the weekend, where his simmering uneasiness about their reception of him eventually reaches a boiling point."
+  },
+  {
+    "title": "Parasite",
+    "year": 2019,
+    "director": "Bong Joon Ho",
+    "genre": "Thriller",
+    "rating": 8.6,
+    "description": "Greed and class discrimination threaten the newly formed symbiotic relationship between the wealthy Park family and the destitute Kim clan."
+  }
+]
