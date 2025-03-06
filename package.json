@@ -1,0 +1,18 @@
+{
+  "name": "nackademin_webb_24_be_1_lessons",
+  "version": "1.0.0",
+  "description": "Materialet kommer att uppdateras kontinuerligt. När det är aktuellt kommer jag att lägga till nya lektioner och uppdatera befintliga lektioner. För varje lektion som läggs till kommer det att skapas en ny branch som heter efter lektionen. Main kommer altid vara den aktuella versionen av koden.",
+  "main": "index.js",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "mongodb": "^6.14.2",
+    "nodemon": "^3.1.9"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
