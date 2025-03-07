@@ -1,0 +1,62 @@
+[
+  {
+    "name": "Erik Andersson",
+    "age": 23,
+    "program": "Web Development",
+    "yearGraduated": null
+  },
+  {
+    "name": "Maria Lindström",
+    "age": 28,
+    "program": "Data Science",
+    "yearGraduated": 2023
+  },
+  {
+    "name": "Johan Nilsson",
+    "age": 21,
+    "program": "Web Development",
+    "yearGraduated": null
+  },
+  {
+    "name": "Sara Bergman",
+    "age": 25,
+    "program": "UX Design",
+    "yearGraduated": 2022
+  },
+  {
+    "name": "Karl Svensson",
+    "age": 30,
+    "program": "DevOps Engineering",
+    "yearGraduated": null
+  },
+  {
+    "name": "Anna Karlsson",
+    "age": 24,
+    "program": "Data Science",
+    "yearGraduated": null
+  },
+  {
+    "name": "Gustav Holm",
+    "age": 27,
+    "program": "Web Development",
+    "yearGraduated": 2021
+  },
+  {
+    "name": "Emma Larsson",
+    "age": 22,
+    "program": "UX Design",
+    "yearGraduated": null
+  },
+  {
+    "name": "Oscar Ekström",
+    "age": 29,
+    "program": "DevOps Engineering",
+    "yearGraduated": 2023
+  },
+  {
+    "name": "Linnea Berg",
+    "age": 26,
+    "program": "Data Science",
+    "yearGraduated": 2022
+  }
+]
