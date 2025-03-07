@@ -1,20 +1,14 @@
 const express = require("express");
 const { connectToDatabase } = require("./db");
 const { getAllStudents, importStudents } = require("./db/students");
+const studentRouter = require("./routes/student.route")
 
 const app = express();
 
-// Get all students from the database
-app.get("/api/students/", async (req, res) => {
-  let filter = {};
-  try {
-    const students = await getAllStudents(filter);
-    res.json(students);
-  } catch (error) {
-    console.warn("Failed to fetch students");
-    res.json([]);
-  }
-});
+app.use(express.json())
+
+// Uses the router for all student commuincations
+app.use("/api/students", studentRouter)
 
 app.listen(3000, async () => {
   console.log("Server is running on port 3000");

@@ -1,3 +1,4 @@
+const { ObjectId } = require("mongodb");
 const { db } = require(".");
 
 const studentsCollection = db.collection("students");
@@ -8,7 +9,10 @@ async function getAllStudents() {
 }
 
 async function getStudentById(id) {
-  const student = await studentsCollection.findOne({ _id: id });
+  const _id = new ObjectId(id)
+  console.log("Get student", _id)
+  const student = await studentsCollection.findOne({ _id: _id });
+  console.log("Student", student)
   return student;
 }
 
@@ -18,17 +22,19 @@ async function createStudent(student) {
   return newStudent;
 }
 
-async function updateStudent(id, student) {
-  const result = await studentsCollection.findOneAndUpdate(
-    { _id: id },
-    { $set: student },
+async function updateStudent(id, studentData) {
+  const _id = new ObjectId(id)
+  const student = await studentsCollection.findOneAndUpdate(
+    { _id: _id },
+    { $set: studentData },
     { returnDocument: "after" }
   );
-  return result;
+  return student;
 }
 
 async function deleteStudent(id) {
-  return await studentsCollection.findOneAndDelete({ _id: id });
+  const _id = new ObjectId(id)
+  return await studentsCollection.findOneAndDelete({ _id: _id });
 }
 
 async function deleteAllStudents() {
