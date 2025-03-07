@@ -6,17 +6,13 @@ const app = express();
 
 // Get all students from the database
 app.get("/api/students/", async (req, res) => {
-    const { director } = req.query  
-    let filter = {}
-    if(director) {
-        filter = { director }
-    }
+  let filter = {};
   try {
     const students = await getAllStudents(filter);
     res.json(students);
   } catch (error) {
-    console.warn("Failed to fetch students")
-    res.json([])
+    console.warn("Failed to fetch students");
+    res.json([]);
   }
 });
 
