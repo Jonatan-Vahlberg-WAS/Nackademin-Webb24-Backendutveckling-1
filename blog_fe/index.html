@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <div id="blog-posts"></div>
+    <form id="create-post-form">
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="content" placeholder="Content">
+        <input type="text" id="author" placeholder="Author">
+        <button type="submit">Create Post</button>
+    </form>
+    <script>
+        const blogPostContainer = document.getElementById('blog-posts')
+        const createPostForm = document.getElementById('create-post-form')
+        async function getPosts () {
+            try {
+                const result = await fetch('http://localhost:3000/api/posts')
+                const posts = await result.json()
+                console.log(posts)
+                blogPostContainer.textContent = JSON.stringify(posts, null, 2)
+            } catch (error) {
+                console.warn("error fetching posts", error)
+            }
+        }
+
+        async function createPost(post) {
+            try {
+                const result = await fetch('http://localhost:3000/api/posts', {
+                    method: 'POST',
+                    body: JSON.stringify(post),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                })
+                const newPost = await result.json()
+                console.log(newPost)
+                getPosts()
+            } catch (error) {
+                console.warn("error creating post", error)
+            }
+        }
+
+        getPosts()
+
+        createPostForm.addEventListener('submit', (e) => {
+            e.preventDefault()
+            const post = {
+                title: e.target.title.value,
+                content: e.target.content.value,
+                author: e.target.author.value,
+            }
+            createPost(post)
+            e.target.reset()
+        })
+    </script>
+</body>
+</html>
