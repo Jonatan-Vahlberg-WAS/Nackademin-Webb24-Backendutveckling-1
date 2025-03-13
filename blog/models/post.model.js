@@ -12,10 +12,6 @@ const postSchema = new mongoose.Schema({
     required: true,
     minlength: 10,
   },
-  author: {
-    type: String,
-    required: true,
-  },
   tags: {
     type: [String],
     default: [],
@@ -26,9 +22,18 @@ const postSchema = new mongoose.Schema({
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "User"
+    ref: "User",
+    required: true
   }
 });
+
+postSchema.virtual('summery').get(function () {
+  if(this.content.length > 30) {
+    return this.content.substring(0,50)+"..."
+  }
+})
+
+postSchema.set('toJSON', { virtuals: true });
 
 const Post = mongoose.model("Post", postSchema);
 

@@ -3,8 +3,14 @@ const router = express.Router();
 const Post = require("../models/post.model");
 
 router.get("/", async (req, res) => {
+    const user = req.query.user
+    const filter = {}
+    if(user) {
+        console.log("Filtering based on user id")
+        filter.user = user
+    }
     try {
-        const posts = await Post.find();
+        const posts = await Post.find(filter).populate("user");
         res.status(200).json(posts);
     } catch (error) {
         console.warn("Error fetching posts", error);
