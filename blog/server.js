@@ -19,6 +19,6 @@ app.listen(port, () => {
     console.log("Connected to MongoDB");
   })
   .catch((err) => {
-    console.log(err);
+    console.warn("Error connecting to MongoDB", err);
   });
 });
