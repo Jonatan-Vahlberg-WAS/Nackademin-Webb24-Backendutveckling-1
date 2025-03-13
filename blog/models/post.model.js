@@ -4,14 +4,21 @@ const postSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    minlength: 3,
+    maxlength: 100,
   },
   content: {
     type: String,
     required: true,
+    minlength: 10,
   },
   author: {
     type: String,
     required: true,
+  },
+  tags: {
+    type: [String],
+    default: [],
   },
   createdAt: {
     type: Date,

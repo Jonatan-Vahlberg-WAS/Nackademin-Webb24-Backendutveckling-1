@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="blog-posts"></div>
@@ -21,7 +22,11 @@
                 const result = await fetch('http://localhost:3000/api/posts')
                 const posts = await result.json()
                 console.log(posts)
-                blogPostContainer.textContent = JSON.stringify(posts, null, 2)
+                blogPostContainer.innerHTML = ''
+                posts.forEach(post => {
+                    const postElement = renderPost(post)
+                    blogPostContainer.appendChild(postElement)
+                })
             } catch (error) {
                 console.warn("error fetching posts", error)
             }
@@ -42,6 +47,19 @@
             } catch (error) {
                 console.warn("error creating post", error)
             }
+        }
+
+        function renderPost(post) {
+            const postElement = document.createElement('div')
+            postElement.classList.add('blog-post')
+            postElement.innerHTML = `
+            <h2>${post.title}</h2>
+            <p>${post.content}</p>
+            <p>Author: ${post.author}</p>
+            <p>Tags: ${post.tags.join(', ')}</p>
+            <p>Created At: ${new Date(post.createdAt).toLocaleString()}</p>
+            `
+            return postElement
         }
 
         getPosts()
