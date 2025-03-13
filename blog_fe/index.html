@@ -11,15 +11,20 @@
     <form id="create-post-form">
         <input type="text" id="title" placeholder="Title">
         <input type="text" id="content" placeholder="Content">
-        <input type="text" id="author" placeholder="Author">
         <button type="submit">Create Post</button>
     </form>
     <script>
         const blogPostContainer = document.getElementById('blog-posts')
         const createPostForm = document.getElementById('create-post-form')
         async function getPosts () {
+            const user = new URL(window.location.href).searchParams.get("user")
+            console.log(user)
+            const url = new URL('http://localhost:3000/api/posts')
+            if(user) {
+                url.searchParams.append("user", user)
+            }
             try {
-                const result = await fetch('http://localhost:3000/api/posts')
+                const result = await fetch(url.href)
                 const posts = await result.json()
                 console.log(posts)
                 blogPostContainer.innerHTML = ''
@@ -55,7 +60,7 @@
             postElement.innerHTML = `
             <h2>${post.title}</h2>
             <p>${post.content}</p>
-            <p>Author: ${post.author}</p>
+            <p>Author: ${post?.user?.name || post.author}</p>
             <p>Tags: ${post.tags.join(', ')}</p>
             <p>Created At: ${new Date(post.createdAt).toLocaleString()}</p>
             `
@@ -69,7 +74,7 @@
             const post = {
                 title: e.target.title.value,
                 content: e.target.content.value,
-                author: e.target.author.value,
+                user: "67d2a8eb11428b74ccedf92c",
             }
             createPost(post)
             e.target.reset()
