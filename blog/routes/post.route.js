@@ -1,16 +1,26 @@
 const express = require("express");
 const router = express.Router();
 const Post = require("../models/post.model");
+const Category = require("../models/category.model");
 
 router.get("/", async (req, res) => {
     const user = req.query.user
+    const category = req.query.category
     const filter = {}
     if(user) {
         console.log("Filtering based on user id")
         filter.user = user
     }
+    if(category) {
+        const _category = await Category.findOne({ name: category })
+        console.log("Category", _category)
+        console.log("Filtering based on category id")
+        if(_category) {
+            filter.categories = _category._id
+        }
+    }
     try {
-        const posts = await Post.find(filter).populate("user");
+        const posts = await Post.find(filter).populate(["user", "categories"]);
         res.status(200).json(posts);
     } catch (error) {
         console.warn("Error fetching posts", error);
@@ -20,7 +30,7 @@ router.get("/", async (req, res) => {
 
 router.get("/:id", async (req, res) => {
     try {
-        const post = await Post.findById(req.params.id);
+        const post = await Post.findById(req.params.id).populate(["user", "categories"]);
         if (!post) {
             throw new Error("Post not found");
         }
@@ -34,7 +44,7 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         console.log(req.body)
-        const post = await Post.create(req.body);
+        const post = await Post.create(req.body)
         res.status(201).json(post);
     } catch (error) {
         console.warn("Error creating post", error);
@@ -44,7 +54,7 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     try {
-        const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const post = await Post.findByIdAndUpdate(req.params.id, req.body, { new: true }).populate(["user", "categories"]);
         if (!post) {
             throw new Error("Post not found");
         }

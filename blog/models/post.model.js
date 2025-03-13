@@ -12,9 +12,10 @@ const postSchema = new mongoose.Schema({
     required: true,
     minlength: 10,
   },
-  tags: {
-    type: [String],
-    default: [],
+  categories: {
+    type: [mongoose.Schema.Types.ObjectId],
+    ref: "Category",
+    required: true
   },
   createdAt: {
     type: Date,

@@ -54,6 +54,10 @@
             }
         }
 
+        function renderCategory(category) {
+            return `<span>${category.name}</span>`
+        }
+
         function renderPost(post) {
             const postElement = document.createElement('div')
             postElement.classList.add('blog-post')
@@ -61,7 +65,10 @@
             <h2>${post.title}</h2>
             <p>${post.content}</p>
             <p>Author: ${post?.user?.name || post.author}</p>
-            <p>Tags: ${post.tags.join(', ')}</p>
+            <div class="categories">
+                <p><strong>Categories:</strong> ${post.categories.map(renderCategory).join(', ')}</p>
+                ${post.categories.map(renderCategory).join(', ')}
+            </div>
             <p>Created At: ${new Date(post.createdAt).toLocaleString()}</p>
             `
             return postElement
@@ -75,6 +82,7 @@
                 title: e.target.title.value,
                 content: e.target.content.value,
                 user: "67d2b54fc3c4f3ec434f12cb",
+                categories: []
             }
             createPost(post)
             e.target.reset()
