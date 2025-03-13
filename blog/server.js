@@ -9,7 +9,10 @@ const port = 3000;
 app.use(cors())
 app.use(express.json());
 
-const postRoutes = require("./routes/route.post");
+const authRoutes = require("./routes/auth.route")
+app.use("/auth", authRoutes);
+
+const postRoutes = require("./routes/post.route");
 app.use("/api/posts", postRoutes);
 
 app.listen(port, () => {
