@@ -6,10 +6,11 @@ const categorySchema = new mongoose.Schema({
         required: true,
         unique: true
     },
-})
-
-categorySchema.virtual("slug").get(function() {
-    return this.name.toLowerCase().replace(/ /g, "-")
+    slug: {
+        type: String,
+        required: true,
+        unique: true
+    }
 })
 
 categorySchema.set("toJSON", { virtuals: true })

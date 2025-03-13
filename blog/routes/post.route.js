@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
         filter.user = user
     }
     if(category) {
-        const _category = await Category.findOne({ name: category })
+        const _category = await Category.findOne({ slug: category })
         console.log("Category", _category)
         console.log("Filtering based on category id")
         if(_category) {

@@ -28,7 +28,11 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
     try {
         console.log(req.body)
-        const category = await Category.create(req.body);
+        const categoryData = {
+            name: req.body.name,
+            slug: req.body.name.toLowerCase().replace(/ /g, "-")
+        }
+        const category = await Category.create(categoryData);
         res.status(201).json(category);
     } catch (error) {
         console.warn("Error creating category", error);
@@ -38,7 +42,12 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
     try {
-        const category = await Category.findByIdAndUpdate(req.params.id, req.body, { new: true });
+        const categoryData = {}
+        if(req.body.name) {
+            categoryData.name = req.body.name
+            categoryData.slug = req.body.name.toLowerCase().replace(/ /g, "-")
+        }
+        const category = await Category.findByIdAndUpdate(req.params.id, categoryData, { new: true });
         if (!category) {
             throw new Error("Category not found");
         }
@@ -62,4 +71,12 @@ router.delete("/:id", async (req, res) => {
     }
 });
 
+router.delete("/admin/all", async (req, res) => {
+    try {
+        await Category.deleteMany()
+        res.status(200).json({ message: "All categories deleted successfully" })
+    } catch (error) {
+        console.warn("Error deleting all categories", error)
+    }
+})
 module.exports = router;
