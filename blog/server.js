@@ -20,6 +20,9 @@ app.use("/api/categories", categoryRoutes)
 const postRoutes = require("./routes/post.route");
 app.use("/api/posts", postRoutes);
 
+const commentRoutes = require("./routes/comment.routes");
+app.use("/api/comments", commentRoutes);
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
   mongoose.connect(MONGO_URL)
