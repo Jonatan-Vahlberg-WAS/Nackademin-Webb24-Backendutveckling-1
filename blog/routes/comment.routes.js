@@ -6,7 +6,7 @@ const Comment = require("../models/comment.model");
 router.get("/posts/:postId/comments", async (req, res) => {
   try {
     const comments = await Comment.find({ post: req.params.postId })
-      .populate("user", "name email")
+      .populate("user", "name")
       .sort({ createdAt: -1 });
     res.json(comments);
   } catch (error) {
@@ -32,18 +32,11 @@ router.post("/posts/:postId/comments", async (req, res) => {
 });
 
 // Update a comment
-router.put("/comments/:commentId", async (req, res) => {
+router.put("/:commentId", async (req, res) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
     if (!comment) {
       return res.status(404).json({ message: "Comment not found" });
-    }
-
-    // Check if the user is the owner of the comment
-    if (comment.user.toString() !== req.user._id.toString()) {
-      return res
-        .status(403)
-        .json({ message: "Not authorized to edit this comment" });
     }
 
     comment.content = req.body.content;
@@ -56,18 +49,11 @@ router.put("/comments/:commentId", async (req, res) => {
 });
 
 // Delete a comment
-router.delete("/comments/:commentId", async (req, res) => {
+router.delete("/:commentId", async (req, res) => {
   try {
     const comment = await Comment.findById(req.params.commentId);
     if (!comment) {
       return res.status(404).json({ message: "Comment not found" });
-    }
-
-    // Check if the user is the owner of the comment
-    if (comment.user.toString() !== req.user._id.toString()) {
-      return res
-        .status(403)
-        .json({ message: "Not authorized to delete this comment" });
     }
 
     await comment.deleteOne();
